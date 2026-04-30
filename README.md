@@ -121,6 +121,7 @@ antes de permitir el inicio de sesión?
 > 📸 *[Captura no disponible — se aceptaba cualquier texto sin validación]*
 
 **Después:**
+
 ![Login con validación](screenshots/img01.jpg)
 
 **Reflexión:**
@@ -145,6 +146,7 @@ del usuario registrado en la pantalla de Perfil?
 > 📸 *[Captura no disponible — el perfil mostraba siempre datos predeterminados]*
 
 **Después:**
+
 ![Perfil con usuario registrado](screenshots/img02.jpg)
 
 **Reflexión:**
@@ -169,6 +171,7 @@ inscripción entre la pantalla de Cursos y el Perfil del usuario?
 > 📸 *[Captura no disponible — los cursos inscritos no se reflejaban en la lista general]*
 
 **Después:**
+
 ![Cursos sincronizados](screenshots/img03.jpg)
 
 **Reflexión:**
