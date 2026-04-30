@@ -121,8 +121,7 @@ antes de permitir el inicio de sesión?
 > 📸 *[Captura no disponible — se aceptaba cualquier texto sin validación]*
 
 **Después:**
-
-> 📸 *[Agregar captura de la pantalla de Login con validación activa]*
+![Login con validación](screenshots/img01.jpg)
 
 **Reflexión:**
 Antes de esta mejora, cualquier usuario podía ingresar a la app sin tener un correo válido, lo que representaba una falla de seguridad básica. Con la validación del símbolo `@`, se garantiza que el formato del correo sea correcto antes de permitir el acceso, mejorando tanto la seguridad como la experiencia del usuario al recibir un mensaje de error claro.
@@ -146,8 +145,7 @@ del usuario registrado en la pantalla de Perfil?
 > 📸 *[Captura no disponible — el perfil mostraba siempre datos predeterminados]*
 
 **Después:**
-
-> 📸 *[Agregar captura del perfil mostrando los datos del usuario registrado]*
+![Perfil con usuario registrado](screenshots/img02.jpg)
 
 **Reflexión:**
 El problema causaba una experiencia inconsistente, ya que el usuario veía información que no le pertenecía. Al vincular correctamente los datos del registro con la pantalla de Perfil, la app ahora refleja la identidad real del usuario autenticado, haciendo la experiencia más personalizada y confiable.
@@ -171,8 +169,7 @@ inscripción entre la pantalla de Cursos y el Perfil del usuario?
 > 📸 *[Captura no disponible — los cursos inscritos no se reflejaban en la lista general]*
 
 **Después:**
-
-> 📸 *[Agregar captura mostrando los cursos inscritos correctamente marcados]*
+![Cursos sincronizados](screenshots/img03.jpg)
 
 **Reflexión:**
 La falta de sincronización generaba confusión, ya que el usuario no podía distinguir visualmente qué cursos ya tenía y cuáles no. Al implementar un estado compartido, la app ahora muestra correctamente qué cursos están inscritos desde cualquier pantalla, brindando una experiencia coherente y evitando inscripciones duplicadas.
