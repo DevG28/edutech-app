@@ -1,32 +1,32 @@
-# 🎓 EduTech Academy — App Móvil de Cursos
+# 🎓 EduTech Academy — Sistema de Gestión de Aprendizaje Móvil
 
-Proyecto final de navegación en **Jetpack Compose** para el curso de Desarrollo Móvil. [cite_start]La aplicación simula una academia online con catálogo de cursos y gestión de perfil[cite: 4, 5].
+![Status](https://img.shields.io/badge/Status-Completado-success?style=for-the-badge)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
+![Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white)
 
----
-
-## 🚀 Acceso a las Etapas del Proyecto
-
-Para una revisión detallada del proceso de construcción, selecciona una de las etapas:
-
-### 📂 [Etapa 1: Diseño y Desarrollo Propio](./ETAPA_01.md)
-* [cite_start]Configuración de `NavHost` y `NavController`[cite: 17].
-* [cite_start]Implementación de las 5 pantallas obligatorias[cite: 18].
-* [cite_start]Manejo de argumentos y Material 3[cite: 57, 60].
-
-### 📂 [Etapa 2: Mejoras con Gemini (IA)](./MEJORAS_GEMINI.md)
-* [cite_start]Auditoría de UI/UX[cite: 66].
-* [cite_start]Implementación de 3 mejoras sugeridas por Gemini[cite: 70].
-* [cite_start]Documentación de prompts y comparativas antes/después[cite: 83].
+**EduTech Academy** es una solución móvil de vanguardia desarrollada para la plataforma de educación online líder en tecnología. Este prototipo funcional demuestra la implementación de arquitecturas de navegación declarativa y principios de diseño **Material 3**.
 
 ---
 
-## 👥 Equipo de Desarrollo
-* **Angie Portocarrero Parra**
-* **Carlos Garcia Garcia**
+## 🗺️ Navegación Estructurada del Proyecto
+
+De acuerdo con los requerimientos del **Examen 02**, la documentación se ha dividido en dos fases fundamentales:
+
+| Fase de Desarrollo | Descripción y Entregables | Acceso |
+| :--- | :--- | :--- |
+| **Etapa 1: Core App** | Construcción de arquitectura, NavHost, paso de argumentos y UI Base. | [📁 Ver Detalle](./ETAPA_01.md) |
+| **Etapa 2: AI Optimization** | Auditoría UI/UX y optimización de flujos mediante Gemini. | [📁 Ver Detalle](./MEJORAS_GEMINI.md) |
 
 ---
 
-## 🛠️ Tecnologías
-* [cite_start]Kotlin + Jetpack Compose[cite: 3].
-* [cite_start]Material Design 3[cite: 60].
-* [cite_start]Navigation Component[cite: 17].
+## 👥 Squad de Desarrollo
+* 👩‍💻 **Angie Portocarrero Parra** — Lead Frontend & UI/UX
+* 👨‍💻 **Carlos Garcia Garcia** — Backend Simulation & Logic Architecture
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+* **Lenguaje:** Kotlin (v1.9+)
+* **UI Framework:** Jetpack Compose (Material 3)
+* **Navigation:** Navigation Compose con Safe Args.
+* **Tooling:** Gemini in Android Studio (AI Support).
