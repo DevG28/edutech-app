@@ -4,10 +4,12 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-//import com.edutech.app.ui.screens.LoginScreen
-//import com.edutech.app.ui.screens.HomeScreen
+import com.edutech.app.ui.screens.CoursesScreen
+import com.edutech.app.ui.screens.DetailScreen
+import com.edutech.app.ui.screens.HomeScreen
+import com.edutech.app.ui.screens.LoginScreen
+import com.edutech.app.ui.screens.ProfileScreen
 
-// Definición de rutas
 object Routes {
     const val LOGIN = "login"
     const val HOME = "home"
@@ -18,31 +20,25 @@ object Routes {
 
 @Composable
 fun NavGraph(navController: NavHostController) {
-
     NavHost(
         navController = navController,
         startDestination = Routes.LOGIN
     ) {
-
         composable(Routes.LOGIN) {
             LoginScreen(navController)
         }
-
         composable(Routes.HOME) {
             HomeScreen(navController)
         }
-
         composable(Routes.COURSES) {
-            // Luego CoursesScreen(navController)
+            CoursesScreen(navController)
         }
-
         composable("${Routes.DETAIL}/{courseId}") {
             val courseId = it.arguments?.getString("courseId")
-            // Luego DetailScreen(courseId)
+            DetailScreen(navController, courseId)
         }
-
         composable(Routes.PROFILE) {
-            // Luego ProfileScreen(navController)
+            ProfileScreen(navController)
         }
     }
 }
