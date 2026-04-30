@@ -99,69 +99,88 @@ Registro de mejoras realizadas con **Gemini in Android Studio**.
 ### 🔍 Pantallas auditadas
 
 1. **Pantalla de Login**
-2. **Pantalla de Cursos**
-3. **Pantalla de Detalle del Curso**
+2. **Pantalla de Registro**
+3. **Pantalla de Perfil / Mis Cursos**
 
 ---
 
-### Mejora 1 — [Nombre de la mejora]
+### Mejora 1 — Validación de correo en Login
+
+Se implementó validación de formato de correo electrónico en la pantalla de Login. Anteriormente era posible ingresar cualquier texto y acceder a la app sin restricciones.
 
 **Prompt usado en Gemini:**
 ```
-[Pega aquí el prompt que usaste]
+Tengo una pantalla de Login en Jetpack Compose. Actualmente el usuario puede ingresar 
+cualquier texto en el campo de correo y contraseña y acceder sin validación. 
+¿Cómo puedo agregar validación para que el correo tenga formato válido con @ 
+antes de permitir el inicio de sesión?
 ```
 
 **Antes:**
-> 📸 *[Agregar captura antes]*
+
+> 📸 *[Captura no disponible — se aceptaba cualquier texto sin validación]*
 
 **Después:**
-> 📸 *[Agregar captura después]*
+
+> 📸 *[Agregar captura de la pantalla de Login con validación activa]*
 
 **Reflexión:**
-[2-3 líneas sobre qué mejoró y por qué fue positivo para la experiencia del usuario]
+Antes de esta mejora, cualquier usuario podía ingresar a la app sin tener un correo válido, lo que representaba una falla de seguridad básica. Con la validación del símbolo `@`, se garantiza que el formato del correo sea correcto antes de permitir el acceso, mejorando tanto la seguridad como la experiencia del usuario al recibir un mensaje de error claro.
 
 ---
 
-### Mejora 2 — [Nombre de la mejora]
+### Mejora 2 — Persistencia del usuario registrado en Perfil
+
+Se corrigió el flujo de registro para que el usuario recién creado se refleje correctamente en la pantalla de Perfil. Antes, el perfil siempre mostraba datos predeterminados sin importar con qué cuenta se había iniciado sesión.
 
 **Prompt usado en Gemini:**
 ```
-[Pega aquí el prompt que usaste]
+En mi app de Android con Jetpack Compose, cuando un usuario se registra e inicia sesión, 
+la pantalla de Perfil sigue mostrando datos estáticos predeterminados en lugar de los 
+datos del usuario registrado. ¿Cómo puedo pasar y mostrar correctamente la información 
+del usuario registrado en la pantalla de Perfil?
 ```
 
 **Antes:**
-> 📸 *[Agregar captura antes]*
+
+> 📸 *[Captura no disponible — el perfil mostraba siempre datos predeterminados]*
 
 **Después:**
-> 📸 *[Agregar captura después]*
+
+> 📸 *[Agregar captura del perfil mostrando los datos del usuario registrado]*
 
 **Reflexión:**
-[2-3 líneas sobre qué mejoró y por qué fue positivo para la experiencia del usuario]
+El problema causaba una experiencia inconsistente, ya que el usuario veía información que no le pertenecía. Al vincular correctamente los datos del registro con la pantalla de Perfil, la app ahora refleja la identidad real del usuario autenticado, haciendo la experiencia más personalizada y confiable.
 
 ---
 
-### Mejora 3 — [Nombre de la mejora]
+### Mejora 3 — Sincronización de cursos inscritos por usuario
+
+Se implementó la actualización dinámica del estado de inscripción de los cursos. Anteriormente, los cursos marcados como inscritos en el perfil no se reflejaban en la lista general de cursos, mostrando todos como disponibles aunque el usuario ya estuviera inscrito.
 
 **Prompt usado en Gemini:**
 ```
-[Pega aquí el prompt que usaste]
+En mi app de cursos con Jetpack Compose, el perfil del usuario muestra una lista de 
+cursos inscritos, pero al ver la pantalla de todos los cursos, los cursos en los que 
+ya está inscrito aparecen como si no lo estuviera. ¿Cómo sincronizo el estado de 
+inscripción entre la pantalla de Cursos y el Perfil del usuario?
 ```
 
 **Antes:**
-> 📸 *[Agregar captura antes]*
+
+> 📸 *[Captura no disponible — los cursos inscritos no se reflejaban en la lista general]*
 
 **Después:**
-> 📸 *[Agregar captura después]*
+
+> 📸 *[Agregar captura mostrando los cursos inscritos correctamente marcados]*
 
 **Reflexión:**
-[2-3 líneas sobre qué mejoró y por qué fue positivo para la experiencia del usuario]
+La falta de sincronización generaba confusión, ya que el usuario no podía distinguir visualmente qué cursos ya tenía y cuáles no. Al implementar un estado compartido, la app ahora muestra correctamente qué cursos están inscritos desde cualquier pantalla, brindando una experiencia coherente y evitando inscripciones duplicadas.
 
 ---
 
 ## 📝 Conclusión general
 
-[Párrafo breve sobre la experiencia de usar Gemini como herramienta de apoyo en el diseño de la app]
+El uso de Gemini como herramienta de apoyo durante la Etapa 2 permitió identificar y resolver problemas de lógica y flujo de datos que no eran evidentes durante el desarrollo inicial. Gracias a las sugerencias de Gemini, logramos mejorar la validación de datos, la persistencia del usuario y la sincronización del estado de la app, obteniendo un producto más robusto y con una mejor experiencia de usuario.
 
 ---
-
-*Trabajo Grupal — Examen 02 | Sección B | Docente: Juan José León Suiyon*
