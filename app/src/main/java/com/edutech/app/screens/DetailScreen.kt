@@ -1,5 +1,6 @@
 package com.edutech.app.ui.screens
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -14,6 +15,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.edutech.app.AppState
 import com.edutech.app.data.courseList
+import com.edutech.app.ui.components.EduAppBar
+import com.edutech.app.ui.components.EduButton
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -23,19 +26,16 @@ fun DetailScreen(navController: NavHostController, courseId: String?) {
 
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = { Text(course?.title ?: "Detalle", fontWeight = FontWeight.Bold) },
-                navigationIcon = {
-                    IconButton(onClick = { navController.popBackStack() }) {
-                        Text(text = "←", fontSize = 20.sp)
-                    }
-                }
+            EduAppBar(
+                title = "Detalle del Curso",
+                onBackClick = { navController.popBackStack() }
             )
-        }
+        },
+        containerColor = MaterialTheme.colorScheme.background
     ) { padding ->
         if (course == null) {
-            Box(modifier = Modifier.padding(padding).fillMaxSize()) {
-                Text("Curso no encontrado", modifier = Modifier.padding(24.dp))
+            Box(modifier = Modifier.padding(padding).fillMaxSize(), contentAlignment = Alignment.Center) {
+                Text("Curso no encontrado", style = MaterialTheme.typography.titleMedium)
             }
         } else {
             Column(
@@ -45,17 +45,15 @@ fun DetailScreen(navController: NavHostController, courseId: String?) {
                     .verticalScroll(rememberScrollState())
                     .padding(24.dp)
             ) {
-                // Imagen placeholder
-                Card(
+                // Cabecera Visual
+                Surface(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(180.dp),
-                    shape = RoundedCornerShape(16.dp),
-                    colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.primaryContainer
-                    )
+                        .height(200.dp),
+                    shape = RoundedCornerShape(32.dp),
+                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
                 ) {
-                    Box(modifier = Modifier.fillMaxSize()) {
+                    Box(contentAlignment = Alignment.Center) {
                         Text(
                             text = when (course.category) {
                                 "Programación" -> "💻"
@@ -63,45 +61,93 @@ fun DetailScreen(navController: NavHostController, courseId: String?) {
                                 "Negocios" -> "📈"
                                 else -> "📚"
                             },
-                            fontSize = 64.sp,
-                            modifier = Modifier.align(Alignment.Center)
+                            fontSize = 80.sp
                         )
                     }
                 }
 
-                Spacer(modifier = Modifier.height(20.dp))
-                Text(text = course.title, fontSize = 22.sp, fontWeight = FontWeight.Bold)
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(text = "👨‍🏫 ${course.instructor}", fontSize = 15.sp)
-                Spacer(modifier = Modifier.height(4.dp))
-                Text(text = "📊 Nivel: ${course.level}", fontSize = 15.sp)
-                Spacer(modifier = Modifier.height(4.dp))
-                Text(text = "🗂️ Categoría: ${course.category}", fontSize = 15.sp)
-                Spacer(modifier = Modifier.height(4.dp))
-                Text(text = "⏱️ Duración: ${course.duration}", fontSize = 15.sp)
+                Spacer(modifier = Modifier.height(24.dp))
+                
+                Text(
+                    text = course.title,
+                    style = MaterialTheme.typography.displayLarge,
+                    color = MaterialTheme.colorScheme.onBackground
+                )
+                
                 Spacer(modifier = Modifier.height(16.dp))
-                HorizontalDivider()
-                Spacer(modifier = Modifier.height(16.dp))
-                Text(text = "Descripción", fontSize = 18.sp, fontWeight = FontWeight.SemiBold)
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(text = course.description, fontSize = 14.sp, lineHeight = 22.sp)
-                Spacer(modifier = Modifier.height(32.dp))
-
-                Button(
-                    onClick = { AppState.inscribirse(course) },
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(12.dp),
-                    enabled = !inscrito,
-                    colors = if (inscrito) ButtonDefaults.buttonColors(
-                        containerColor = MaterialTheme.colorScheme.secondary
-                    ) else ButtonDefaults.buttonColors()
-                ) {
+                
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Surface(
+                        color = MaterialTheme.colorScheme.secondaryContainer,
+                        shape = RoundedCornerShape(12.dp)
+                    ) {
+                        Text(
+                            text = course.category,
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
+                            style = MaterialTheme.typography.labelLarge,
+                            color = MaterialTheme.colorScheme.onSecondaryContainer
+                        )
+                    }
+                    Spacer(modifier = Modifier.width(12.dp))
                     Text(
-                        text = if (inscrito) "✅ Ya estás inscrito" else "Inscribirse",
-                        fontSize = 16.sp
+                        text = "• ${course.duration}",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
+
+                Spacer(modifier = Modifier.height(24.dp))
+                
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(24.dp),
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+                ) {
+                    Column(modifier = Modifier.padding(20.dp)) {
+                        InfoRow(label = "Instructor", value = course.instructor, icon = "👨‍🏫")
+                        Spacer(modifier = Modifier.height(12.dp))
+                        InfoRow(label = "Nivel", value = course.level, icon = "📊")
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(24.dp))
+                
+                Text(
+                    text = "Sobre este curso",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = course.description,
+                    style = MaterialTheme.typography.bodyLarge,
+                    lineHeight = 24.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                
+                Spacer(modifier = Modifier.height(40.dp))
+
+                EduButton(
+                    text = if (inscrito) "✅ Ya estás inscrito" else "Inscribirme ahora",
+                    onClick = { AppState.inscribirse(course) },
+                    enabled = !inscrito,
+                    containerColor = if (inscrito) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.primary
+                )
+                
+                Spacer(modifier = Modifier.height(16.dp))
             }
+        }
+    }
+}
+
+@Composable
+fun InfoRow(label: String, value: String, icon: String) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Text(text = icon, fontSize = 20.sp)
+        Spacer(modifier = Modifier.width(12.dp))
+        Column {
+            Text(text = label, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(text = value, style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.Bold)
         }
     }
 }

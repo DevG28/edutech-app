@@ -9,20 +9,30 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.graphics.Color
 import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
     primary = Blue80,
     secondary = BlueGrey80,
-    tertiary = Cyan80
+    tertiary = Cyan80,
+    background = BackgroundDark,
+    surface = SurfaceDark,
+    onPrimary = Color.Black,
+    onBackground = Color.White,
+    onSurface = Color.White
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Blue40,
+    primary = PrimaryBlue,
     secondary = BlueGrey40,
     tertiary = Cyan40,
-    background = BackgroundLight,
-    surface = SurfaceLight
+    background = BackgroundCanvas,
+    surface = SurfaceContainer,
+    onPrimary = Color.White,
+    onBackground = TextPrimary,
+    onSurface = TextPrimary,
+    onSurfaceVariant = TextSecondary
 )
 
 @Composable

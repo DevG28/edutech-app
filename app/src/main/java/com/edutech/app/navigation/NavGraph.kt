@@ -10,7 +10,7 @@ import com.edutech.app.ui.screens.DetailScreen
 import com.edutech.app.ui.screens.HomeScreen
 import com.edutech.app.ui.screens.LoginScreen
 import com.edutech.app.ui.screens.ProfileScreen
-
+import com.edutech.app.ui.screens.MyCoursesScreen // 🔥 NUEVO
 
 object Routes {
     const val LOGIN = "login"
@@ -18,6 +18,7 @@ object Routes {
     const val COURSES = "courses"
     const val DETAIL = "detail"
     const val PROFILE = "profile"
+    const val MY_COURSES = "my_courses" // 🔥 NUEVO
 }
 
 @Composable
@@ -28,34 +29,35 @@ fun NavGraph(navController: NavHostController) {
         startDestination = Routes.LOGIN
     ) {
 
-        // Pantalla LOGIN
+        // LOGIN
         composable(Routes.LOGIN) {
             LoginScreen(navController)
         }
 
-        // Pantalla HOME
+        // HOME
         composable(Routes.HOME) {
             HomeScreen(navController)
         }
 
-        // Pantalla COURSES
+        // COURSES
         composable(Routes.COURSES) {
             CoursesScreen(navController)
         }
 
-        // Pantalla DETAIL (recibe ID)
+        // DETAIL (con parámetro)
         composable("${Routes.DETAIL}/{courseId}") {
-
-            // Obtiene el parámetro courseId
             val courseId = it.arguments?.getString("courseId") ?: ""
-
-            // Llama a la pantalla detalle
             DetailScreen(navController, courseId)
         }
 
-        // Pantalla PROFILE
+        // PROFILE
         composable(Routes.PROFILE) {
             ProfileScreen(navController)
+        }
+
+        // 🔥 MY COURSES (NUEVO)
+        composable(Routes.MY_COURSES) {
+            MyCoursesScreen(navController)
         }
     }
 }
