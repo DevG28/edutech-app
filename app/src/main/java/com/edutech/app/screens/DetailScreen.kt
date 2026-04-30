@@ -97,7 +97,7 @@ fun DetailScreen(navController: NavHostController, courseId: String?) {
                     ) else ButtonDefaults.buttonColors()
                 ) {
                     Text(
-                        text = if (inscrito) "✅ Ya estás inscrita" else "Inscribirse",
+                        text = if (inscrito) "✅ Ya estás inscrito" else "Inscribirse",
                         fontSize = 16.sp
                     )
                 }
