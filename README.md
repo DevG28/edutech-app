@@ -8,7 +8,7 @@
 
 ---
 
-## 🗺️ Navegación Estructurada del Proyecto
+## Navegación Estructurada del Proyecto
 
 La documentación se ha dividido en dos fases fundamentales:
 
