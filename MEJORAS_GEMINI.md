@@ -33,6 +33,3 @@ Se ejecutó un análisis profundo sobre los flujos de:
 
 ## Reflexión y Conclusiones
 La integración de Gemini permitió transformar un prototipo básico en una aplicación de nivel profesional. Las mejoras en la **jerarquía visual**, la **lógica de validación** y la **sincronización de estados** garantizan que la app sea robusta, confiable y estéticamente superior.
-
----
-*Fin de la documentación - Examen 02*
