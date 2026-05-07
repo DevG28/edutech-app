@@ -10,22 +10,22 @@
 
 ## 🗺️ Navegación Estructurada del Proyecto
 
-De acuerdo con los requerimientos del **Examen 02**, la documentación se ha dividido en dos fases fundamentales:
+La documentación se ha dividido en dos fases fundamentales:
 
-| Fase de Desarrollo | Descripción y Entregables | Acceso |
-| :--- | :--- | :--- |
-| **Etapa 1: Core App** | Construcción de arquitectura, NavHost, paso de argumentos y UI Base. | [📁 Ver Detalle](./ETAPA_01.md) |
-| **Etapa 2: AI Optimization** | Auditoría UI/UX y optimización de flujos mediante Gemini. | [📁 Ver Detalle](./MEJORAS_GEMINI.md) |
+| Fase de Desarrollo           | Descripción y Entregables                                              | Acceso                                 |
+|:-----------------------------|:-----------------------------------------------------------------------|:---------------------------------------|
+| **Etapa 1: Core App**        | Construcción de arquitectura, NavHost, paso de argumentos y UI Base.   | [📁 Ver Detalle](./ETAPA_01.md)        |
+| **Etapa 2: AI Optimization** | Auditoría UI/UX y optimización de flujos mediante Gemini.              | [📁 Ver Detalle](./MEJORAS_GEMINI.md)  |
 
 ---
 
 ## 👥 Squad de Desarrollo
-* 👩‍💻 **Angie Portocarrero Parra** — Lead Frontend & UI/UX
-* 👨‍💻 **Carlos Garcia Garcia** — Backend Simulation & Logic Architecture
+* **Angie Portocarrero Parra** — Lead Frontend & UI/UX
+* **Carlos Garcia Garcia** — Backend Simulation & Logic Architecture
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 * **Lenguaje:** Kotlin (v1.9+)
 * **UI Framework:** Jetpack Compose (Material 3)
 * **Navigation:** Navigation Compose con Safe Args.
